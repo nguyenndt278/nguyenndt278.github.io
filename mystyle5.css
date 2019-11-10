@@ -1,0 +1,42 @@
+body {
+    padding-top: 2rem;
+    background-image: linear-gradient(60deg, #c2e59c 0%, #64b3f4 100%);
+    background-size: cover;
+  }
+  
+  .top {
+  font-family: Georgia;
+  }
+  
+  #myCarousel {
+    padding: 0 1px 1px 1px;
+    margin-top: 1px;
+  }
+  
+  .carousel-item blockquote {
+      border-left: none; 
+      margin: 0;
+   } 
+  
+  .title{
+   font-family: sans-serif;
+  
+   a{
+    color:darkorange;
+    transition: all .2s;
+  
+  a:hover {
+    text-decoration: none;
+    color: orange;
+  } } }
+  
+  
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) { 
+      #quote-carousel 
+      {
+        margin-bottom: 0;
+        padding: 0 1px 1px 1px;
+      }
+      
+  }
