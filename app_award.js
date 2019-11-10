@@ -4,4 +4,4 @@ $('#myCarousel').carousel({
   
   window.sr = ScrollReveal({ reset: true });
   
-  sr.reveal('.company-stuff', { duration: 700 });
+  sr.reveal('.company-stuff', { duration: 700 })
