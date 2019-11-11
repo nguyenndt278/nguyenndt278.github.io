@@ -1,300 +1,122 @@
-@import url(https://fonts.googleapis.com/css?family=Ranga:400,700);
-p {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 30px;
-  font-family: 'Ranga', cursive;
-  line-height: 0;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.container1 {
-  position: absolute;
-  overflow: hidden;
-  margin-top: 15px;
-  width: 100%;
-  height: 400px;
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
 }
 
-
-/* --Sky-- */
-
-.sky {
-  width: 100%;
-  height: 400px;
-  background-color: #a9e4ff;
-  transition: 35s;
+button {
+    background-color: #fff;
+    border: 0;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+    transition: color .2s ease-in;
 }
 
-.container1:hover .sky {
-  background-color: #127cc0;
+button:hover {
+    color: #222;
 }
 
-
-/* --Sun-- */
-
-.sun {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  background: rgba(255, 255, 0, 0.8);
-  border-radius: 50%;
-  top: 45px;
-  left: 60%;
-  margin-right: 100px;
-  box-shadow: 0px 0px 113px 23px rgb(255, 255, 0);
-  z-index: 1;
-  transition: 30s;
+button:focus {
+    outline: 0;
 }
 
-.container1:hover .sun {
-  width: 80px;
-  height: 80px;
-  top: 45px;
-  left: 40%;
-  background: rgba(255, 209, 26, .8);
-  box-shadow: 0px 0px 130px 30px rgb(255, 166, 77);
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
-
-/* --Clouds-- */
-
-
-/* --Group One-- */
-
-.cloud-group-one {
-  width: 100%;
-  height: 40px;
-  position: absolute;
-  top: 20%;
-  z-index: 999;
+.left-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    transition: transform .5s ease-in-out;
 }
 
-.cloud-group-one .cloud-one {
-  position: absolute;
-  display: inline-block;
-  height: 90px;
-  width: 200px;
-  left: 0;
-  top: 5px;
-  background: #fff;
-  opacity: 0.45;
-  transition: 25s;
-  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+.left-slide > div {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
-.container1:hover .cloud-group-one .cloud-one {
-  left: 80%;
-  top: 15px;
-  height: 70px;
-  width: 160px;
+.left-slide h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
 }
 
-.cloud-group-one .cloud-two {
-  position: absolute;
-  display: inline-block;
-  height: 40px;
-  width: 50px;
-  left: 20%;
-  top: 20px;
-  background: #fff;
-  opacity: 0.45;
-  transition: 35s;
-  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  z-index: 500;
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform .5s ease-in-out;
+    margin-block: auto;
 }
 
-.container1:hover .cloud-group-one .cloud-two {
-  left: 80%;
-  top: 20px;
-  height: 40px;
-  width: 100px;
+.right-slide > div{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    margin-block: auto;
 }
 
-.cloud-group-one .cloud-three {
-  position: absolute;
-  display: inline-block;
-  height: 80px;
-  width: 100px;
-  left: 30%;
-  top: 20px;
-  background: #fff;
-  opacity: 0.45;
-  transition: 35s;
-  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  z-index: 500;
+.slider-container .action-buttons button {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
 }
 
-.container1:hover .cloud-group-one .cloud-three {
-  left: 70%;
-  top: 20px;
-  height: 40px;
-  width: 100px;
+.slider-container .action-buttons .down-button {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transform: translateX(-100%);
 }
 
-
-/* --Group Two-- */
-
-.cloud-group-two {
-  width: 100%;
-  height: 50px;
-  position: absolute;
-  top: 7.5%;
-  z-index: 999;
+.slider-container .action-buttons .up-button {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: translateY(-100%);
 }
 
-.cloud-group-two .cloud-one {
-  position: absolute;
-  display: inline-block;
-  height: 90px;
-  width: 200px;
-  left: 40%;
-  top: 0;
-  background: #fff;
-  opacity: 0.45;
-  transition: 20s;
-  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+footer {
+    bottom: 0;
+    background-color: #222;
+	color: #fff;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+	padding: 10px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	letter-spacing: 1px;
+	text-align: center;
 }
 
-.container1:hover .cloud-group-two .cloud-one {
-  left: 100%;
+footer i {
+	color: red;
 }
 
-.cloud-group-two .cloud-two {
-  position: absolute;
-  display: inline-block;
-  height: 40px;
-  width: 50px;
-  left: 5%;
-  top: 20px;
-  background: #fff;
-  opacity: 0.45;
-  transition: 50s;
-  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  z-index: 500;
-}
-
-.container1:hover .cloud-group-two .cloud-two {
-  left: 60%;
-}
-
-.cloud-group-two .cloud-three {
-  position: absolute;
-  display: inline-block;
-  height: 80px;
-  width: 100px;
-  left: 70%;
-  top: 20px;
-  background: #fff;
-  opacity: 0.45;
-  transition: 30s;
-  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
-  z-index: 500;
-}
-
-.container1:hover .cloud-group-two .cloud-three {
-  left: 90%;
-}
-
-
-/* --Windmill-- */
-
-#rotate img {
-  position: absolute;
-  display: block;
-  top: 50%;
-  left: 50%;
-  margin: -75px 0 0 -75px;
-  transform-origin: 50% 50%;
-  //transition: 60s;
-  z-index: 800;
-}
-
-#rotate:hover img {
-  -webkit-animation: rotate 1s infinite;
-  animation: rotate 1s infinite;
-}
-
-@-webkit-keyframes mymove {
-  100% {
-    -webkit-transform: rotate(21600deg);
-  }
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(21600deg);
-  }
-}
-
-.rotor {
-  position: absolute;
-  display: block;
-  top: 49.5%;
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  margin: -13.5px 0 0 -14px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: solid 2px black;
-  z-index: 4;
-}
-
-.pole {
-  position: absolute;
-  display: block;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 160px;
-  margin-left: -4.5px;
-  background-color: #fff;
-  border: solid 2px black;
-  z-index: 3;
-}
-
-.shadow {
-  position: absolute;
-  width: .25px;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.6);
-  top: 91%;
-  left: 50%;
-  transform-origin: 50% 0%;
-  transform: rotate(60deg);
-  -webkit-transform: rotate(60deg);
-  transition: 32s;
-  z-index: 2;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.6);
-}
-
-.container1:hover .shadow {
-  transform: rotate(-50deg);
-  -webkit-transform: rotate(-50deg);
-  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.6);
-}
-
-.grass {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  top: 85%;
-  left: 0;
-  background: #83b50f;
-  /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#546b20, #83b50f);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#546b20, #83b50f);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#546b20, #83b50f);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#546b20, #83b50f);
-  /* Standard syntax */
-  z-index: 1;
+footer a {
+	color: #3C97BF;
+	text-decoration: none;
 }
