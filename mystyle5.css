@@ -29,7 +29,442 @@ body {
     text-decoration: none;
     color: orange;
   } } }
+
+  .shadow {
+    text-shadow: 2px 2px green;
+  }
+
+
   
+  .ferris_wheel ,.wheel {
+    border: 6px solid #fff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: .5;
+  }
+  
+  .ferris_wheel {
+    position: absolute;
+    top: 24%;
+    left: 12%;
+    transform: translateX(-50%) translateY(-50%) scale(1.4, 1.4);
+    border: 0;
+  }
+  
+  .wheel_wrap {
+    position: absolute;
+    animation: wheel_rotate 40s infinite linear;
+  }
+  
+  .wheel:before {
+    content: "";
+    height: 50px;
+    width: 50px;
+    background: #888;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    z-index: 1;
+  }
+  
+  .wheel:after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: #683C10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    border-radius: 50%;
+    border: 4px solid #F3AE34;
+    z-index: 1;
+  }
+  
+  .wheel span:nth-child(1):before {
+    content: "";
+    border-bottom: 2px solid #BABCBA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    top: 50%;
+    left: 6px;
+  }
+  
+  .wheel span:nth-child(1):after {
+    content: "";
+    border-right: 2px solid #BABCBA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    top: 6px;
+    left: 50%;
+    transform: rotate(45deg);
+  }
+  
+  .wheel span:nth-child(2):before {
+    content: "";
+    border-right: 2px solid #BABCBA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    top: 5px;
+    left: 50%;
+    transform: rotate(-45deg);
+  }
+  
+  .wheel span:nth-child(2):after {
+    content: "";
+    border-right: 2px solid #BABCBA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    top: 6px;
+    left: 50%;
+  }
+  
+  div.stand:before,
+  div.stand:after {
+    content: "";
+    position: absolute;
+    border-right: 4px solid #F3AE34;
+    height: 120px;
+    transform: rotate(15deg);
+    top: 88px;
+    left: 50%;
+    margin-left: -15px;
+  }
+  
+  div.stand:after {
+    transform: rotate(-15deg);
+    margin-left: 23px;
+  }
+  
+  .stand span {
+    position: absolute;
+    height: 10px;
+    background: #683C10;
+    width: 100px;
+    bottom: -60px;
+    left: 50%;
+    margin-left: -44px;
+    z-index: 1;
+  }
+  
+  
+  @keyframes wheel_rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .buckets {
+    position: absolute;
+    border: 6px solid #fff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .buckets div {
+    position: absolute;
+    animation: bucket_rotate 40s infinite linear;
+    top: 50%;
+    left: 50%;
+    margin-top: 11px;
+    margin-left: -13px;
+  }
+  
+  .buckets div:before {
+    content: "";
+    height: 13px;
+    left: 9px;
+    border-right: 1px solid #888;
+    position: absolute;
+    top: -12px;
+    transform: rotate(30deg);
+  }
+  
+  .buckets div:after {
+    content: "";
+    height: 13px;
+    border-right: 1px solid #888;
+    position: absolute;
+    right: 10px;
+    transform: rotate(-30deg);
+    top: -12px;
+  }
+  
+  .buckets span {
+    display: inline-block;
+    border-top: 15px solid #A84172;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    height: 0;
+    width: 20px;
+    position: relative;
+  }
+  
+  .buckets span:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    height: 3px;
+    width: 25px;
+    left: -2px;
+    background: #652382;
+  }
+  
+  .buckets span:after {
+    content: "";
+    height: 5px;
+    left: -2px;
+    background: linear-gradient(to right,  #97cde6 0%,#97cde6 35%,#fff 35%,#fff 66%,#97cde6 66%,#97cde6 100%);
+    width: 25px;
+    position: absolute;
+    top: -12px;
+  }
+  
+  @keyframes bucket_rotate {
+    0% { 
+      transform: rotate(0) translateX(75px) rotate(0); 
+    }
+    100% { 
+      transform: rotate(360deg) translateX(75px) rotate(-360deg); 
+    }
+  }
+  
+  .buckets div:nth-child(2) {
+    animation-delay: -4.8s;
+  }
+  
+  .buckets div:nth-child(3) {
+    animation-delay: -9.9s;
+  }
+  
+  .buckets div:nth-child(4) {
+    animation-delay: -15s;
+  }
+  
+  .buckets div:nth-child(5) {
+    animation-delay: -20s;
+  }
+  
+  .buckets div:nth-child(6) {
+    animation-delay: -25s;
+  }
+  
+  .buckets div:nth-child(7) {
+    animation-delay: -30s;
+  }
+  
+  .buckets div:nth-child(8) {
+    animation-delay: -35s;
+  }
+
+
+
+
+  @import url(https://fonts.googleapis.com/css?family=Ranga:400,700);
+
+
+.container1 {
+  position: absolute;
+  overflow: hidden;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 600px;
+}
+
+
+.sun {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: rgba(255, 255, 0, 0.8);
+  border-radius: 50%;
+  top: 45px;
+  left: 60%;
+  margin-right: 100px;
+  box-shadow: 0px 0px 113px 23px rgb(255, 255, 0);
+  z-index: 1;
+  transition: 30s;
+}
+
+.container1:hover .sun {
+  width: 80px;
+  height: 80px;
+  top: 45px;
+  left: 40%;
+  background: rgba(255, 209, 26, .8);
+  box-shadow: 0px 0px 130px 30px rgb(255, 166, 77);
+}
+
+
+.cloud-group-one .cloud-three {
+  position: absolute;
+  display: inline-block;
+  height: 80px;
+  width: 100px;
+  left: 30%;
+  top: 20px;
+  background: #fff;
+  opacity: 0.45;
+  transition: 35s;
+  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  z-index: 500;
+}
+
+.container1:hover .cloud-group-one .cloud-three {
+  left: 70%;
+  top: 20px;
+  height: 840px;
+  width: 100px;
+}
+
+
+/* --Group Two-- */
+
+.cloud-group-two {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 7.5%;
+  z-index: 999;
+}
+
+.cloud-group-two .cloud-one {
+  position: absolute;
+  display: inline-block;
+  height: 90px;
+  width: 200px;
+  left: 40%;
+  top: 0;
+  background: #fff;
+  opacity: 0.45;
+  transition: 20s;
+  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+}
+
+
+.cloud-group-two .cloud-two {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  width: 50px;
+  left: 5%;
+  top: 20px;
+  background: #fff;
+  opacity: 0.45;
+  transition: 50s;
+  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  z-index: 500;
+}
+
+.container1:hover .cloud-group-two .cloud-two {
+  left: 60%;
+}
+
+.cloud-group-two .cloud-three {
+  position: absolute;
+  display: inline-block;
+  height: 80px;
+  width: 100px;
+  left: 70%;
+  top: 20px;
+  background: #fff;
+  opacity: 0.45;
+  transition: 30s;
+  -webkit-clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  clip-path: polygon(80% 100%, 90% 44%, 70% 5%, 50% 25%, 30% 4%, 25% 69%, 45% 100%, 60% 90%);
+  z-index: 500;
+}
+
+.container1:hover .cloud-group-two .cloud-three {
+  left: 90%;
+}
+
+
+/* --Windmill-- */
+
+#rotate img {
+  position: absolute;
+  display: block;
+  top: 60%;
+  left: 10%;
+  margin: -75px 0 0 -75px;
+  transform-origin: 50% 50%;
+  //transition: 60s;
+  z-index: 800;
+}
+
+#rotate:hover img {
+  -webkit-animation: rotate 1s infinite;
+  animation: rotate 1s infinite;
+}
+
+@-webkit-keyframes mymove {
+  100% {
+    -webkit-transform: rotate(21600deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(21600deg);
+  }
+}
+
+.rotor {
+  position: absolute;
+  display: block;
+  top: 60%;
+  left: 10%;
+  width: 25px;
+  height: 25px;
+  margin: -13.5px 0 0 -14px;
+  background-color: red;
+  border-radius: 50%;
+  border: solid 2px black;
+  z-index: 4;
+}
+
+.pole {
+  position: absolute;
+  display: block;
+  top: 60%;
+  left: 10%;
+  width: 5px;
+  height: 260px;
+  margin-left: -4.5px;
+  background-color: rgb(255, 255, 255);
+  border: solid 2px black;
+  z-index: 3;
+}
+
+
+.container1:hover .shadow {
+  transform: rotate(-50deg);
+  -webkit-transform: rotate(-50deg);
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.6);
+}
   
   /* Small devices (tablets, 768px and up) */
   @media (min-width: 768px) { 
